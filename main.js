@@ -7,13 +7,15 @@ createApp({
         const link = ref('https://www.camt.cmu.ac.th/index.php/th/')
         const inStock = ref(true)
         const inventory = ref(10)
+        const onSale = ref(true)
         return {
             product, 
             description, 
             image, 
             link,
             inStock,
-            inventory
+            inventory,
+            onSale
         }
     }
 }).mount('#app')

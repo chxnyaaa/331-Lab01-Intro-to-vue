@@ -17,6 +17,11 @@ createApp({
             { id: 2234, color: 'green' },
             { id: 2235, color: 'blue' }
         ])
+        const sizes = ref([
+            'S, ',
+            'M, ',
+            'L'
+        ])
         return {
             product, 
             description, 
@@ -26,7 +31,8 @@ createApp({
             inventory,
             onSale,
             details,
-            variants
+            variants,
+            sizes
         }
     }
 }).mount('#app')

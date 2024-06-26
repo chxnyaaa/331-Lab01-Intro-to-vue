@@ -22,7 +22,8 @@
             </div>
         </div>
         <div class="product-info">
-            <h1><a :href="link">{{title}}</a></h1>
+            <h1 v-if=""onSale><a href="productLink" target="_blank">{{onSaleTitle}}</a></h1>
+            <h1 v-else><a href="productLink" target="_blank">{{title}}</a></h1>
             <p>{{description}}</p>
             <p v-if="!inStock || inventory === 0">Out of Stock</p>
             <p v-else-if="inventory > 10">In Stock</p>

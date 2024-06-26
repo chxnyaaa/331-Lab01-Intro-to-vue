@@ -4,9 +4,9 @@ createApp({
         const product = ref('Boots')
         const brand = ref('SE 331')
         const description = ref('This is boots')
-        const image = ref('./assets/images/socks_green.jpg')
+        // const image = ref('./assets/images/socks_green.jpg')
         const link = ref('https://www.camt.cmu.ac.th/index.php/th/')
-        const inStock = ref(true)
+        // const inStock = ref(true)
         const inventory = ref(7)
         const onSale = ref(true)
         const details = ref([

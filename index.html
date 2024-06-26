@@ -36,7 +36,8 @@
             @mouseover="updateImage(variant.image)" 
             class="color-circle" :style="{backgroundColor: variant.color}">
             </div>
-            <button class="button" :disabled='!inStock' @click="addToCart">Add To Cart</button>
+            <button class="button" :disabled='!inStock' @click="addToCart"
+            :class="{disabledButton: !inStock}">Add To Cart</button>
             <button class="button" @click="toggleInStock">Toggle Stock</button>
             <p><span v-for ="size in sizes" >{{size}}</span></p>
         </div>

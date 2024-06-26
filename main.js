@@ -5,13 +5,15 @@ createApp({
         const description = ref('This is boots')
         const image = ref('./assets/images/socks_green.jpg')
         const link = ref('https://www.camt.cmu.ac.th/index.php/th/')
-        const inStock = ref(false)
+        const inStock = ref(true)
+        const inventory = ref(100)
         return {
             product, 
             description, 
             image, 
             link,
-            inStock
+            inStock,
+            inventory
         }
     }
 }).mount('#app')

@@ -22,6 +22,7 @@ createApp({
             'M, ',
             'L'
         ])
+        const cart = ref(0)
         return {
             product, 
             description, 
@@ -32,7 +33,8 @@ createApp({
             onSale,
             details,
             variants,
-            sizes
+            sizes,
+            cart
         }
     }
 }).mount('#app')

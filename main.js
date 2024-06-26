@@ -23,6 +23,9 @@ createApp({
             'L'
         ])
         const cart = ref(0)
+        function addToCart() {
+            cart.value +=1
+        }
         return {
             product, 
             description, 
@@ -34,7 +37,8 @@ createApp({
             details,
             variants,
             sizes,
-            cart
+            cart,
+            addToCart
         }
     }
 }).mount('#app')

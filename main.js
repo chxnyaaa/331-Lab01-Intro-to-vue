@@ -4,8 +4,9 @@ createApp({
         const product = ref('Boots')
         const description = ref('This is boots')
         const image = ref('./assets/images/socks_green.jpg')
+        const link = ref('https://www.camt.cmu.ac.th/index.php/th/')
         return {
-            product, description, image
+            product, description, image, link
         }
     }
 }).mount('#app')

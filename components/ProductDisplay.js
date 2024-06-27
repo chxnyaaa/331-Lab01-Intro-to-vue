@@ -30,6 +30,7 @@ const productDisplay = {
             <button class="button" :disabled="!inStock" @click="removeFromCart" 
             :class="{disabledButton: !inStock}">Remove Cart</button>
             <button class="button" @click="toggleInStock">Toggle Stock</button>
+            <review-form></review-form>
             <p><span v-for ="size in sizes" >{{size}}</span></p>
         </div>
     `,

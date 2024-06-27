@@ -30,6 +30,7 @@ const productDisplay = {
             <button class="button" :disabled="!inStock" @click="removeFromCart" 
             :class="{disabledButton: !inStock}">Remove Cart</button>
             <button class="button" @click="toggleInStock">Toggle Stock</button>
+            <review-list v-if="reviews.lenght" :reviews="reviews"></review-list>
             <review-form @review-submitted="addReview"></review-form>
             <p><span v-for ="size in sizes" >{{size}}</span></p>
         </div>
@@ -83,7 +84,6 @@ const productDisplay = {
         const cart = ref(0)
         function addToCart() {
             emit('add-to-cart', variants.value[selectedVariant.value].id)
-            console.log(cart.value)
         }
         function removeFromCart() {
             emit('remove-from-cart', variants.value[selectedVariant.value].id)
@@ -103,6 +103,7 @@ const productDisplay = {
         const reviews = ref([])
         function addReview(review) {
             reviews.value.push(review)
+            console.log(review.value)
         }
         return {
             title,

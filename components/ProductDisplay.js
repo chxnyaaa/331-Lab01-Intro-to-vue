@@ -32,7 +32,10 @@ const productDisplay = {
             <p><span v-for ="size in sizes" >{{size}}</span></p>
         </div>
     `,
-    setup() {
+    props: {
+        premium: Boolean
+    },
+    setup(props) {
         const product = ref('Boots')
         const brand = ref('SE 331')
         const description = ref('This is boots')
@@ -103,7 +106,8 @@ const productDisplay = {
             addToCart,
             updateImage,
             updateVariant,
-            toggleInStock
+            toggleInStock,
+            shipping
         }
     }
 }

@@ -30,7 +30,7 @@ const productDisplay = {
             <button class="button" :disabled="!inStock" @click="removeFromCart" 
             :class="{disabledButton: !inStock}">Remove Cart</button>
             <button class="button" @click="toggleInStock">Toggle Stock</button>
-            <review-form></review-form>
+            <review-form @review-submitted="addReview"></review-form>
             <p><span v-for ="size in sizes" >{{size}}</span></p>
         </div>
     `,
@@ -100,6 +100,10 @@ const productDisplay = {
         function toggleInStock() {
             inStock.value = !inStock.value;
         }
+        const reviews = ref([])
+        function addReview(review) {
+            reviews.value.push(review)
+        }
         return {
             title,
             onSaleTitle,
@@ -117,7 +121,9 @@ const productDisplay = {
             updateImage,
             updateVariant,
             toggleInStock,
-            shipping
+            shipping,
+            reviews,
+            addReview
         }
     }
 }

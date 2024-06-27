@@ -27,6 +27,8 @@ const productDisplay = {
             </div>
             <button class="button" :disabled='!inStock' @click="addToCart"
             :class="{disabledButton: !inStock}">Add To Cart</button>
+            <button class="button" :disabled="!inStock" @click="removeFromCart" 
+            :class="{disabledButton: !inStock}">Remove Cart</button>
             <button class="button" @click="toggleInStock">Toggle Stock</button>
             <p><span v-for ="size in sizes" >{{size}}</span></p>
         </div>
@@ -82,6 +84,9 @@ const productDisplay = {
             emit('add-to-cart', variants.value[selectedVariant.value].id)
             console.log(cart.value)
         }
+        function removeFromCart() {
+            emit('remove-from-cart', variants.value[selectedVariant.value].id)
+        }
         const title = computed(() =>{
             return brand.value+' '+product.value
         })
@@ -107,6 +112,7 @@ const productDisplay = {
             sizes,
             cart,
             addToCart,
+            removeFromCart,
             updateImage,
             updateVariant,
             toggleInStock,

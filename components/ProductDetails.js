@@ -9,8 +9,8 @@ const productDetails = {
     },
     setup(props) {
         const details = computed(() => {
-            return props.details;
-        });
-        return details;
+            return props.details
+        })
+        return details
     },
-};
+}

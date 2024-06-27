@@ -30,7 +30,7 @@ const productDisplay = {
             <button class="button" :disabled="!inStock" @click="removeFromCart" 
             :class="{disabledButton: !inStock}">Remove Cart</button>
             <button class="button" @click="toggleInStock">Toggle Stock</button>
-            <review-list v-if="reviews.lenght" :reviews="reviews"></review-list>
+            <review-list v-if="reviews.length" :reviews="reviews"></review-list>
             <review-form @review-submitted="addReview"></review-form>
             <p><span v-for ="size in sizes" >{{size}}</span></p>
         </div>

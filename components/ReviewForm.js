@@ -1,5 +1,5 @@
 const reviewForm = {
-    template: `
+  template: `
         <form class="review-form" @submit.prevent="onSubmit">
             <h3>Leave a review</h3>
             <label for="name">Name:</label>
@@ -17,29 +17,41 @@ const reviewForm = {
                 <option>1</option>
             </select>
 
+            <label for="recommend">Would you recommend this product?</label>
+        <select id="recommend" v-model="form.recommend">
+            <option>Yes</option>
+            <option>No</option>
+        </select>
+
             <input class="button" type="submit" value="Submit">
         </form>`,
-    setup(props, {emit}) {
-        const form = reactive({
-            name: '',
-            review: '',
-            rating: null
-        })
-        function onSubmit(){
-            const productReview = {
-                name: form.name,
-                review: form.review,
-                rating: form.rating,
-            }
-            emit('review-submitted', productReview)
-            form.name =''
-            form.review =''
-            form.rating = null
-            console.log(productReview)
-        }
-        return {
-            form,
-            onSubmit
-        }
+  setup(props, { emit }) {
+    const form = reactive({
+      name: "",
+      review: "",
+      rating: null,
+    });
+    function onSubmit() {
+      if (form.name === "" || form.review === "" || form.rating === null) {
+        alert("Review is incomplete. Please fill out every field.");
+        return;
+      }
+      const productReview = {
+        name: form.name,
+        review: form.review,
+        rating: form.rating,
+        recommend: form.recommend
+      };
+      emit("review-submitted", productReview);
+      form.name = "";
+      form.review = "";
+      form.rating = null;
+      form.recommend = "";
+      console.log(productReview);
     }
-}
+    return {
+      form,
+      onSubmit,
+    };
+  },
+};
